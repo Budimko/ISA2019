@@ -1,0 +1,62 @@
+﻿
+@model IEnumerable<EasyFlight.ViewModel.FriendViewModel>
+
+<ul class="nav nav-pills nav-fill">
+    <li class="nav-item">
+        <a class="nav-link" href="https://localhost:44300/User/Index">Informacije</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" href="https://localhost:44300/User/SpisakPrijatelja">Prijatelji</a>
+
+
+        <BR><BR>
+        @if (Model.Count() == 0)
+        {
+            <BR><BR><BR>
+            <a>Trenutno Nemate ni jednog prijatelja!!!!</a>
+        }
+        else
+        {
+            <BR><BR>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            @Html.DisplayNameFor(model => model.FIrstName)
+                        </th>
+                        <th>
+                            @Html.DisplayNameFor(model => model.LastName)
+                        </th>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FIrstName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.LastName)
+                            </td>
+
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <BR><BR><BR>
+            <form method="get" action="https://localhost:44300/User/DodajPrijatelja">
+                <div class="form-group">
+                    <label for="login-password">Unesite ime ili prezime prijatelja koga zelite dodati</label>
+                    <input type="text" class="form-control" name="NameOrSurname">
+                    <BR>
+                    <button type="submit" value="DodajPrijatelja" class="btn btn-primary">DodajPrijatelja</button>
+
+                </div>
+            </form>
+        }
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+    </li>
+
+</ul>

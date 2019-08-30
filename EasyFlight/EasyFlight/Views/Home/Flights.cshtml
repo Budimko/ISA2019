@@ -1,0 +1,155 @@
+﻿@model IEnumerable<EasyFlight.ViewModel.AirlineViewModel>
+@using Microsoft.AspNetCore.Http
+
+@{
+    ViewData["Title"] = "Home page";
+}
+<!doctype html>
+<html lang="en">
+
+
+
+<body>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+
+
+
+
+                <BR><BR><BR>
+
+                <h2>Pretraga</h2>
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+                           aria-controls="nav-home" aria-selected="true">Aviokompanjia</a>
+                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+                           aria-controls="nav-profile" aria-selected="false">Hotel</a>
+                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
+                           aria-controls="nav-contact" aria-selected="false">Rent a car</a>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+                        <!-- AVIOKOMPANJIJA PRETRAGA -->
+
+                        <BR>
+
+
+                        <form action="/Home/Flights">
+                            <div class="form-row">
+                                <div class="form-group col-md-2">
+                                    <label for="let-start">Polazak</label>
+                                    <input name="DepartureTime" class="span2 form-control" size="16" type="date" value="" id="let-start" data-date="">
+                                </div>
+                                <div class="form-group col-md-2">
+                                    <label for="let-end">Dolazak</label>
+                                    <input name="LandingTime" class="span3 form-control" size="16" type="date" value="" id="let-end" data-date="">
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <label for="let-od">Od</label>
+                                    <input type="text" class="form-control" name="From" placeholder="From">
+                                </div>
+
+                                <div class="form-group col-md-3">
+                                    <label for="let-do">Do</label>
+                                    <input type="text" class="form-control" name="To" placeholder="To">
+                                </div>
+
+                                <div class="form-group col-md-2">
+                                    <label for="br-putnika">Vrsta puta</label>
+                                    <select name="Type" id="br-putnika" class="form-control">
+                                        <option selected>Round Trup</option>
+                                        <option>One Wey</option>
+                                        <option>Multi City</option>
+                                    </select>
+                                </div>
+
+                            </div>
+
+
+                            <button type="submit" class="btn btn-primary">Pretraži</button>
+                        </form>
+
+
+                    </div>
+
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">Hotel not implement</div>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">Rent a car  not implement</div>
+                </div>
+                <div>
+                    @if (Model.Count() == 0)
+                    {
+                        <BR><BR><BR>
+                        <a>Let sa trazenim filterom ne postoji u ponudi</a>
+                    }
+                    else
+                    {
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Name)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Price)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.TimeOfTrevel)
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Name)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Price)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TimeOfTrevel)
+                                    </td>
+                                    @if (Context.Session.GetString("Test") != null)
+                                    {
+                                    <td>
+                                        @Html.ActionLink("Rezervisi let", "Index", "Airplane")
+                                    </td>
+
+                                    }
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    }
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
+
+
+
+
+
+

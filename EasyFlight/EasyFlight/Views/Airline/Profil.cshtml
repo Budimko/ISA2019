@@ -1,0 +1,96 @@
+﻿@model EasyFlight.ViewModel.AirlineHomeViewModel;
+@using Microsoft.AspNetCore.Http
+
+<div>
+    
+    <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+            <a class="nav-link active" href='@Url.Action("Profil","Airline",new { id=Model.Id})'>Opis</a>
+
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href='@Url.Action("Letovi","Airline",new { id=Model.Id})'>Letovi</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href='@Url.Action("DodatneUsluge","Airline",new { id=Model.Id})'>Dodatne Usluge</a>
+        </li>
+        @if (Context.Session.GetString("Admin") != null)
+        {
+            <li class="nav-item">
+                <a class="nav-link" href='@Url.Action("Destinacije", "Airline", new { id = Model.Id })'>Destinacije</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href='@Url.Action("Letovi", "Airline", new { id = Model.Id })'>Avion</a>
+            </li>
+
+        }
+        </ul>
+
+    
+</div>
+<p>Informacije Aviokompanije</p>
+
+<div class="form-group">
+    <label for="name">Naziv</label>
+    <input type="text" class="form-control" name="Name" value="@Html.DisplayFor(modelItem => Model.Name)" readonly="@(true)">
+
+</div>
+<div class="form-group">
+    <label for="opis">Opis</label>
+    <input type="text" class="form-control"  name="Opis" value="@Html.DisplayFor(modelItem => Model.Description)" readonly="@(true)">
+
+</div>
+<div class="form-group">
+    <label for="adresa">Adresa</label>
+    <input type="text" class="form-control" name="Adresa" value="@Html.DisplayFor(modelItem => Model.Address)" readonly="@(true)">
+
+</div>
+
+<div>
+    @if (Context.Session.GetString("Admin") != null)
+    {
+    <form action=@Url.Action("Profil","Airline",new { id=Model.Id})>
+        <button type="submit" class="btn btn-primary" value="Update">Update</button>
+    </form>
+    }
+ </div>
+<BR><BR>
+<p>Spisak destinacija sa kojima posluje Aviokompanija</p>
+<BR>
+
+<div>
+    
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Address)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var dest in Model.airlinesDestinationList)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => dest.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => dest.Description)
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+
+</div>
+
+

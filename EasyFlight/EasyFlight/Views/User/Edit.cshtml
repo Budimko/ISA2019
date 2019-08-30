@@ -1,0 +1,123 @@
+﻿
+
+@model IEnumerable<EasyFlight.Models.User>
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Registracija</title>
+</head>
+
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+
+
+                <BR><BR><BR>
+
+                <h2>Pretraga</h2>
+                <nav>
+                    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab"
+                           aria-controls="nav-home" aria-selected="true">Profil</a>
+                        <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab"
+                           aria-controls="nav-profile" aria-selected="false">Prijatelji</a>
+                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
+                           aria-controls="nav-contact" aria-selected="false">Rezervacije</a>
+                        <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab"
+                           aria-controls="nav-contact" aria-selected="false">Informacije</a>
+                    </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+
+                    <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+                        <!-- AVIOKOMPANJIJA PRETRAGA -->
+
+
+                        <BR><BR><BR>
+                        <div class="row justify-content-md-center">
+
+                            <div class="col-4">
+
+                                <form method="post">
+                                    @foreach (var item in Model)
+                                    {
+                                        <div class="form-group">
+                                            <label for="name">Name</label>
+                                            <input type="text" class="form-control" name="Name" value=@Html.DisplayFor(modelItem => item.Name)>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="surname">Surname</label>
+                                            <input type="text" class="form-control" name="Surname" value=@Html.DisplayFor(modelItem => item.Surname)>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="login-email">Email address</label>
+                                            <input type="email" class="form-control" name="Email" value=@Html.DisplayFor(modelItem => item.Email)>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="login-password">Password</label>
+                                            <input type="password" class="form-control" name="Password">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="adress">Adress</label>
+                                            <input type="text" class="form-control" name="Address" value="@Html.DisplayFor(modelItem => item.Address)">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="PhoneNumber">Adress</label>
+                                            <input type="text" class="form-control" name="PhoneNumber" value=@Html.DisplayFor(modelItem => item.PhoneNumber)>
+                                        </div>
+                                        <div>
+                                            <input type="hidden"id="Id" name="Id" value=@Html.DisplayFor(modelItem => item.Id)>
+                                        </div>
+
+                                        <input type="submit" value="Create" class="btn btn-default" />
+
+                                    }
+                                </form>
+
+
+
+                            </div>
+
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">Hotel not implement</div>
+                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">Rent a car  not implement</div>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>`

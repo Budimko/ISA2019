@@ -1,0 +1,75 @@
+﻿@using Microsoft.AspNetCore.Http
+@model EasyFlight.ViewModel.AirlineHomeViewModel;
+
+
+@{
+    ViewData["Title"] = "Letovi";
+}
+<div>
+    <ul class="nav nav-pills nav-fill">
+        <li class="nav-item">
+            <a class="nav-link" href='@Url.Action("Profil","Airline",new { id=Model.Id})'>Profil</a>
+
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link active" href='@Url.Action("Letovi","Airline",new { id=Model.Id})'>Letovi</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link" href='@Url.Action("DodatneUsluge","Airline",new { id=Model.Id})'>Dodatne Usluge</a>
+        </li>
+        @if (Context.Session.GetString("Admin") != null)
+        {
+            <li class="nav-item">
+                <a class="nav-link" href='@Url.Action("Destinacije", "Airline", new { id = Model.Id })'>Destinacije</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href='@Url.Action("Letovi", "Airline", new { id = Model.Id })'>Avion</a>
+            </li>
+
+        }
+
+
+    </ul>
+</div>
+<BR><BR><BR>
+<form action="https://localhost:44300/Home/Flights">
+    <div class="form-row">
+        <div class="form-group col-md-2">
+            <label for="let-start">Polazak</label>
+            <input name="DepartureTime" class="span2 form-control" size="16" type="date" value="" id="let-start" data-date="">
+        </div>
+        <div class="form-group col-md-2">
+            <label for="let-end">Dolazak</label>
+            <input name="LandingTime" class="span3 form-control" size="16" type="date" value="" id="let-end" data-date="">
+        </div>
+
+        <div class="form-group col-md-3">
+            <label for="let-od">Od</label>
+            <input type="text" style="text-transform:capitalize" class="form-control" name="From" placeholder="From">
+        </div>
+
+        <div class="form-group col-md-3">
+            <label for="let-do">Do</label>
+            <input type="text" style="text-transform:capitalize" class="form-control" name="To" placeholder="To">
+        </div>
+
+        <div class="form-group col-md-2">
+            <label for="br-putnika">Vrsta puta</label>
+            <select name="Type" id="br-putnika" class="form-control">
+                <option selected>Round Trup</option>
+                <option>One Wey</option>
+                <option>Multi City</option>
+            </select>
+        </div>
+
+    </div>
+    <button type="submit" value="Flight" class="btn btn-primary">Pretraži</button>
+</form>
+
+
+
+
+

@@ -1,0 +1,102 @@
+﻿@using Microsoft.AspNetCore.Http
+<!DOCTYPE html>
+
+
+
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/datepicker.css">
+
+    <title>EasyFlight</title>
+</head>
+<body>
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+
+                    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                        <a class="navbar-brand" href="/">Easy Flight</a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                                data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                                aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                            <ul class="navbar-nav mr-auto">
+
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="https://localhost:44300/Airline/Index">Aviokompanije</a>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/">Početna</a>
+                                </li>
+                            </ul>
+                            @if (Context.Session.GetString("Test") != null || (Context.Session.GetString("Admin") != null))
+                            {
+                                if (Context.Session.GetString("Test") != null)
+                                {
+                                    <a class="nav-link" href="https://localhost:44300/User/Index">@Context.Session.GetString("Test")</a>
+                                    <form action="https://localhost:44300/Account/Logout">
+                                        <a class="nav-link" href="https://localhost:44300/Account/Logout">Logout</a>
+                                    </form>
+
+                                }
+                                if (Context.Session.GetString("Admin") != null)
+                                {
+                                    <a class="nav-link" href="https://localhost:44300/User/Index">@Context.Session.GetString("Admin")</a>
+                                    <form action="https://localhost:44300/Account/Logout">
+                                        <a class="nav-link" href="https://localhost:44300/Account/Logout">Logout</a>
+                                    </form>
+
+                                }
+
+                            }
+                            else
+                            {
+
+                                <a class="nav-link" href="https://localhost:44300/Account/Login">Login</a>
+                                <a class="nav-link" href="https://localhost:44300/Account/Register">Register</a>
+                            }
+                        </div>
+                    </nav>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div>
+        @RenderBody()
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
