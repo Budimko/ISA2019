@@ -18,7 +18,6 @@ C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Release\netcoreapp2.1\Razo
 C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Release\netcoreapp2.1\Razor\Views\Account\Logout.g.cshtml.cs
 C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Release\netcoreapp2.1\Razor\Views\Account\Register.g.cshtml.cs
 C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Release\netcoreapp2.1\Razor\Views\Admin\UrediLet.g.cshtml.cs
-C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Release\netcoreapp2.1\Razor\Views\Airline\Avion.g.cshtml.cs
 C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Release\netcoreapp2.1\Razor\Views\Airline\Destinacije.g.cshtml.cs
 C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Release\netcoreapp2.1\Razor\Views\Airline\DodatneUsluge.g.cshtml.cs
 C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Release\netcoreapp2.1\Razor\Views\Airline\DodatneUslugeEdit.g.cshtml.cs
@@ -49,3 +48,4 @@ C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Release\netcoreapp2.1\Easy
 C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Release\netcoreapp2.1\EasyFlight.dll
 C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Release\netcoreapp2.1\EasyFlight.pdb
 C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Release\netcoreapp2.1\EasyFlight.csproj.CopyComplete
+C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Release\netcoreapp2.1\Razor\Views\Admin\Popust.g.cshtml.cs

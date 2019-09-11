@@ -89,15 +89,29 @@ namespace EasyFlight.Controllers
         [HttpGet]
         public IActionResult Popust()
         {
-            
+           
+            var r = this.Request.Path.Value.ToString();
+            var parseURL = r.Substring(14);
+            HttpContext.Session.SetString("seatId", parseURL.ToString());
+
             return View();
         }
         [HttpPost]
         public IActionResult Popust(AdminSeatViewModel model)
         {
             var flightID = HttpContext.Session.GetString("flightId");
+            var seatID = HttpContext.Session.GetString("seatId");
+            var allSeatInfo = _repoWrapper.SeatInfo.getSeatInfos.ToList();
             
+            SeatInfo seatInfo = new SeatInfo();
+            seatInfo.SeatId = new Guid(seatID);
+            seatInfo.SeatId = new Guid(flightID);
+            seatInfo.DiscountPrice = model.Discount;
             
+
+
+
+
             return View();
         }
     }

@@ -29,7 +29,7 @@ namespace EasyFlight.ViewModel
         public string RowNumber { get; set; }
         public bool Occupide { get; set; }
         public bool Disabled { get; set; }
-        public double? Discount { get; set; }
+        public decimal? Discount { get; set; }
         
 }
 }

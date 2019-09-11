@@ -21,7 +21,7 @@ namespace EasyFlight.Controllers
         {
             
             var allSeats = _repoWrapper.Seat.getSeats.ToList();
-            var resevation = _repoWrapper.Reservation.getReservations.Where(f=>f.FlightId== id).ToList();//TODO: filter po letu
+            var resevation = _repoWrapper.Reservation.getReservations.Where(f=>f.FlightId== id).ToList();
             var seatInfos = _repoWrapper.SeatInfo.getSeatInfos.ToList();
 
 
