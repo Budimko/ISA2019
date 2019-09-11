@@ -45,60 +45,72 @@
 
 
                         <BR><BR><BR>
-                        <div class="row justify-content-md-center">
+                                <div class="row justify-content-md-center">
 
-                            <div class="col-4">
+                                    <div class="col-4">
 
-                                <form method="post">
-                                    @foreach (var item in Model)
+                                        <form method="post">
+                                            @foreach (var item in Model)
+                                            {
+                                                <div class="form-group">
+                                                    <label for="name">Name</label>
+                                                    <input type="text" class="form-control" name="Name" value=@Html.DisplayFor(modelItem => item.Name)>
+
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="surname">Surname</label>
+                                                    <input type="text" class="form-control" name="Surname" value=@Html.DisplayFor(modelItem => item.Surname)>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="login-email">Email address</label>
+                                                    <input type="email" class="form-control" name="Email" value=@Html.DisplayFor(modelItem => item.Email)>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="login-password">Password</label>
+                                                    <input type="password" class="form-control" name="Password" value="@Html.DisplayFor(modelItem => item.Address)">
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <label for="adress">Adress</label>
+                                                    <input type="text" class="form-control" name="Address" value="@Html.DisplayFor(modelItem => item.Address)">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="PhoneNumber">PhoneNumber</label>
+                                                    <input type="text" class="form-control" name="PhoneNumber" value=@Html.DisplayFor(modelItem => item.PhoneNumber)>
+                                                </div>
+                                                <div>
+                                                    <input type="hidden" id="Id" name="Id" value=@Html.DisplayFor(modelItem => item.Id)>
+                                                </div>
+
+                                                <input type="submit" value="Create" class="btn btn-default" />
+
+                                            }
+
+                                        </form>
+
+
+
+                                    </div>
+                                    @if (ViewBag.Message != null)
                                     {
-                                        <div class="form-group">
-                                            <label for="name">Name</label>
-                                            <input type="text" class="form-control" name="Name" value=@Html.DisplayFor(modelItem => item.Name)>
+                                        <script type="text/javascript">
+                                            window.onload = function () {
 
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="surname">Surname</label>
-                                            <input type="text" class="form-control" name="Surname" value=@Html.DisplayFor(modelItem => item.Surname)>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="login-email">Email address</label>
-                                            <input type="email" class="form-control" name="Email" value=@Html.DisplayFor(modelItem => item.Email)>
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="login-password">Password</label>
-                                            <input type="password" class="form-control" name="Password">
-                                        </div>
+                                                /**/
+                                                alert("ViewBag.Message");
+                                                /**/
 
-                                        <div class="form-group">
-                                            <label for="adress">Adress</label>
-                                            <input type="text" class="form-control" name="Address" value="@Html.DisplayFor(modelItem => item.Address)">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="PhoneNumber">Adress</label>
-                                            <input type="text" class="form-control" name="PhoneNumber" value=@Html.DisplayFor(modelItem => item.PhoneNumber)>
-                                        </div>
-                                        <div>
-                                            <input type="hidden"id="Id" name="Id" value=@Html.DisplayFor(modelItem => item.Id)>
-                                        </div>
-
-                                        <input type="submit" value="Create" class="btn btn-default" />
-
+                                            };
+                                        </script>
                                     }
-                                </form>
 
 
-
-                            </div>
-
-
-                        </div>
+                                </div>
 
 
                     </div>
 
-                    <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">Hotel not implement</div>
-                    <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">Rent a car  not implement</div>
+                    
                 </div>
 
 

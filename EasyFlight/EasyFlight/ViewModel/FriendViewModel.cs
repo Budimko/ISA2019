@@ -7,10 +7,10 @@ namespace EasyFlight.ViewModel
 {
     public class FriendViewModel
     {
-       
+
         public string FIrstName { get; set; }
         public string LastName { get; set; }
-        public bool Invite { get; set; }
+        public bool Accepted { get; set; }
 
     }
 }

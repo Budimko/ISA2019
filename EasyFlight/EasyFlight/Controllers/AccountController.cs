@@ -37,11 +37,13 @@ namespace EasyFlight.Controllers
             {
                 User user = MapperToDataModel.FromUserViewModeToUser(model);
                 _service.User.Add(user);
-                
-                return RedirectToAction("Home", "Home");
+
+                ViewBag.Message = "Uspesno ste se registrovali na nas sajt. Mozete se ulogovari i koristiti sve funkcije sajta EasyTravel";
+                return View("Views/Home/Home.cshtml");
             }
             else
             {
+                ViewBag.Message = "Da bi ste se uspjesno registrovali, morate popuniti sva polja prilikom rezervacije i/ili vam se pasvordi razlikuju";
                 return View(model);
             }
 
@@ -68,19 +70,26 @@ namespace EasyFlight.Controllers
                 if (roleLogin == true)
                 {
                     HttpContext.Session.SetString("Admin", lModel.Email.ToString());
-                    return RedirectToAction("Home", "Home");
+                    ViewBag.Message = "Dobro dosli na sajt EasyTrave. Na vasoj profilnoj stranici imate link ka aviokompaniji";
+                    return View("Views/Home/Home.cshtml");
+                    //return RedirectToAction("Index", "User");
                 }
 
                 if (login == true)
                 {
 
                     HttpContext.Session.SetString("Test", lModel.Email.ToString());
+                    ViewBag.Message = "Dobro dosli na sajt EasyTrave.";
+                    return View("Views/Home/Home.cshtml");
 
-                    return RedirectToAction("Home", "Home");
-                } 
+                }
+
+                ViewBag.Message = "Pogresno ste uneli mail ili password";
+                return View(lModel);
+                
 
             }
-          
+            ViewBag.Message = "Niste popunili sva polja za unos.";
             return View(lModel);
            
 

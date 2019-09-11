@@ -1,0 +1,64 @@
+﻿@model EasyFlight.ViewModel.ReservationViewModel;
+
+@{
+    ViewData["Title"] = "Reservation";
+}
+<BR><BR> <BR>
+<div class="row justify-content-md-center">
+
+    <div class="col-4">
+
+        <form method="post">
+            <div class="form-group">
+                <label for="login-password">Name</label>
+                <input type="text" class="form-control" name="Name" value="@Html.DisplayFor(modelItem => Model.Name)">
+
+            </div>
+            <div class="form-group">
+                <label for="surname">Surname</label>
+                <input type="text" class="form-control" name="Surname" value="@Html.DisplayFor(modelItem => Model.Surname)">
+            </div>
+            <div class="form-group">
+                <label for="Passeport">Passeport serial nuber</label>
+                <input type="text" class="form-control" name="Passport" placeholder="Passeport serial nuber">
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Potvrdi rezervaciju" class="btn btn-success" />
+            </div>
+            @if (ViewBag.Message != null)
+            {
+                <script type="text/javascript">
+                    window.onload = function () {
+                        /**/
+                        alert("@ViewBag.Message");
+                    /**/
+                };
+                </script>
+            }
+        </form>
+
+        <br><br>
+        <div>
+            @Html.ActionLink("Rezervisite Hotel", "Hotel", "Reservation")
+        </div>
+        <br>
+        <div>
+            @Html.ActionLink("Rezervisite Auto", "Auto", "Reservation")
+        </div>
+
+    </div>
+
+    <div class="col-2">
+        <form>
+            <div class="form-group">
+                <label for="PozoviPrijatelja">Pozovi Prijatelja</label>
+                <input type="text" class="form-control" name="PozoviPrijatelja" placeholder="Pozovi Prijatelja">
+
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Pozovi Prijatelja" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+

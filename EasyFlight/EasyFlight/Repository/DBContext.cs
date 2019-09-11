@@ -25,7 +25,12 @@ namespace EasyFlight.Repository
         public DbSet<Friend> Friend { get; set; }
         public DbSet<AirlineDestination> AirlineDestination { get; set; }
         public DbSet<AdditionalServiceAirline> AdditionalServiceAirline { get; set; }
-
+        public DbSet<Airplane> Airplane { get; set; }
+        public DbSet<Reservation> Reservation { get; set; }
+        public DbSet<Seat> Seat { get; set; }
+        public DbSet<Discount> Discount { get; set; }
+        public DbSet<TypeOfSeat> TypeOfSeat { get; set;}
+        public DbSet<SeatInfo> SeatInfo { get; set; }
 
 
 

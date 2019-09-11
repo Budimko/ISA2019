@@ -10,6 +10,7 @@ namespace EasyFlight.Services
     {
         IEnumerable<AdditionalServiceAirline> getAdditionalServiceAirline { get; }
         AdditionalServiceAirline GetAdditionalServiceAirline(Guid Id);
-        
+        void Edit(AdditionalServiceAirline _AdditionalServiceAirline);
+
     }
 }

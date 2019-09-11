@@ -18,6 +18,12 @@ namespace EasyFlight.Repository
         private IFriend _friend;
         private IAirlineDestination _airlineDestination;
         private IAdditionalServiceAirline _additionalServiceAirline;
+        private IAirplane _airplane;
+        private IReservation _reservation;
+        private ISeat _seat;
+        private IDiscount _discount;
+        private ITypeOfSeat _typeOfSeat;
+        private ISeatInfo _seatInfo;
 
 
 
@@ -36,6 +42,17 @@ namespace EasyFlight.Repository
                 return _destination;
             }
 
+        }
+        public ISeatInfo SeatInfo
+        {
+            get
+            {
+                if (_seatInfo == null)
+                {
+                    _seatInfo = new SeatInfoRepository(_dBContext);
+                }
+                return _seatInfo;
+            }
         }
 
         public IAirline Airline
@@ -118,7 +135,63 @@ namespace EasyFlight.Repository
             }
         }
 
+        public IAirplane Airplane
+        {
+            get
+            {
+                if (_airplane == null)
+                {
+                    _airplane = new AirplaneRepository(_dBContext);
+                }
+                return _airplane;
+            }
+        }
 
+        public IReservation Reservation
+        {
+            get
+            {
+                if (_reservation == null)
+                {
+                    _reservation = new ReservationRepository(_dBContext);
+                }
+                return _reservation;
+            }
+        }
+        public ISeat Seat
+        {
+            get
+            {
+                if (_seat == null)
+                {
+                    _seat = new SeatRepository(_dBContext);
+                }
+                return _seat;
+            }
+        }
+        public IDiscount Discount
+        {
+            get
+            {
+                if (_discount == null)
+                {
+                    _discount = new DiscountRepository(_dBContext);
+                }
+                return _discount;
+            }
+        }
+        public ITypeOfSeat TypeOfSeat
+        {
+            get
+            {
+                if (_typeOfSeat == null)
+                {
+                    _typeOfSeat = new TypeOfSeatRepository(_dBContext);
+                }
+                return _typeOfSeat;
+            }
+        }
 
+        
     }
 }

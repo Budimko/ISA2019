@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using EasyFlight.Models;
 using EasyFlight.Repository;
 using EasyFlight.ViewModel;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -62,10 +63,12 @@ namespace EasyFlight.Controllers
 
 
 
-
+            HttpContext.Session.SetString("FlightId", flights.Select(f => f.Id).FirstOrDefault().ToString()); 
+            
             flights.ForEach(t => airlines.Add(new AirlineViewModel() { Name = _service.Airline.GetAirline(t.AirlineId)?.Name.ToString(),
                                                                       Price = _service.Flight.GetFlight(t.Id).Price,
-                                                                      TimeOfTrevel = _service.Flight.GetFlight(t.Id).TimeOfTrevel
+                                                                      TimeOfTrevel = _service.Flight.GetFlight(t.Id).TimeOfTrevel,
+                                                                      FlightId = flights.Select(f => f.Id).FirstOrDefault()
             }));
             
             return View(airlines);

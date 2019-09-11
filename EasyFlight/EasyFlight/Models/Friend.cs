@@ -15,7 +15,9 @@ namespace EasyFlight.Models
         [ForeignKey("User")]
         public Guid UserSendId { get; set; }
         public Guid UserReceivedId { get; set; }
+        public bool Accepted { get; set; }
 
-        
+
+
     }
 }

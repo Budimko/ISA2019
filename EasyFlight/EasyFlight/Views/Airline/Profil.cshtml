@@ -22,12 +22,8 @@
                 <a class="nav-link" href='@Url.Action("Destinacije", "Airline", new { id = Model.Id })'>Destinacije</a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href='@Url.Action("Letovi", "Airline", new { id = Model.Id })'>Avion</a>
-            </li>
-
         }
-        </ul>
+    </ul>
 
     
 </div>
@@ -52,7 +48,7 @@
 <div>
     @if (Context.Session.GetString("Admin") != null)
     {
-    <form action=@Url.Action("Profil","Airline",new { id=Model.Id})>
+    <form action=@Url.Action("ProfilEdit","Airline",new { id=Model.Id})>
         <button type="submit" class="btn btn-primary" value="Update">Update</button>
     </form>
     }

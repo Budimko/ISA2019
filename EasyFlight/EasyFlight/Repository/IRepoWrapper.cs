@@ -16,6 +16,12 @@ namespace EasyFlight.Repository
         IFriend Friend { get; }
         IAirlineDestination AirlineDestination { get; }
         IAdditionalServiceAirline AdditionalServiceAirline { get; }
+        IAirplane Airplane { get; }
+        IReservation Reservation { get; }
+        ISeat Seat { get; }
+        IDiscount Discount { get; }
+        ITypeOfSeat TypeOfSeat { get; }
+        ISeatInfo SeatInfo { get; }
 
 
     }

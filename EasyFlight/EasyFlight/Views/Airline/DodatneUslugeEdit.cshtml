@@ -1,0 +1,53 @@
+﻿@using Microsoft.AspNetCore.Http
+@model EasyFlight.Models.AdditionalServiceAirline;
+
+<div>
+    
+        <ul class="nav nav-pills nav-fill">
+            <li class="nav-item">
+                <a class="nav-link" href='@Url.Action("Profil","Airline",new { id=Model.Id})'>Opis</a>
+
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href='@Url.Action("Letovi","Airline",new { id=Model.Id})'>Letovi</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link active" href='@Url.Action("DodatneUsluge","Airline",new { id=Model.Id})'>Dodatne Usluge</a>
+            </li>
+            @if (Context.Session.GetString("Admin") != null)
+            {
+                <li class="nav-item">
+                    <a class="nav-link" href='@Url.Action("Destinacije", "Airline", new { id = Model.Id })'>Destinacije</a>
+                </li>
+
+                
+
+            }
+
+
+        </ul>
+       
+    
+</div>
+<form method="post">
+    <div class="form-group">
+        <label for="name">Rucni prtljag</label>
+        <input type="text" class="form-control" name="HandBaggage" value="@Html.DisplayFor(modelItem => Model.HandBaggage)">
+
+    </div>
+    <div class="form-group">
+        <label for="opis">Predati prtljag</label>
+        <input type="text" class="form-control" name="CheckedBaggage" value="@Html.DisplayFor(modelItem => Model.CheckedBaggage)">
+
+    </div>
+    <div class="form-group">
+        <label for="adresa">Pice</label>
+        <input type="text" class="form-control" name="Drink" value="@Html.DisplayFor(modelItem => Model.Drink)">
+
+    </div>
+    <button type="submit" class="btn btn-primary" value="Update">Update</button>
+</form>
+
+

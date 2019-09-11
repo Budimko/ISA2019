@@ -23,6 +23,16 @@
                     <input type="password" class="form-control" name="Password" placeholder="Password">
                 </div>
                 <button type="submit" class="btn btn-success">Submit</button>
+                @if (ViewBag.Message != null)
+                {
+                    <script type="text/javascript">
+                    window.onload = function () {
+                        /**/
+                        alert("@ViewBag.Message");
+                    /**/
+                };
+                    </script>
+                }
             </form>
 
 
@@ -30,6 +40,7 @@
         </div>
 
     </div>
+    
 
 </body>
 </html>`

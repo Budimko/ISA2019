@@ -18,6 +18,12 @@ namespace EasyFlight.Repository
 
         public IEnumerable<Airline> getAirlines => db.Airline;
 
+        public void Edit(Airline _Airline)
+        {
+            db.Airline.Update(_Airline);
+            db.SaveChanges();
+        }
+
         public Airline GetAirline(Guid Id)
         {
             

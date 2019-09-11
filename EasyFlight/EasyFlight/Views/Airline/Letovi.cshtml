@@ -8,16 +8,16 @@
 <div>
     <ul class="nav nav-pills nav-fill">
         <li class="nav-item">
-            <a class="nav-link" href='@Url.Action("Profil","Airline",new { id=Model.Id})'>Profil</a>
+            <a class="nav-link" href='@Url.Action("Profil", "Airline", new { id = Model.Id })'>Profil</a>
 
         </li>
 
         <li class="nav-item">
-            <a class="nav-link active" href='@Url.Action("Letovi","Airline",new { id=Model.Id})'>Letovi</a>
+            <a class="nav-link active" href='@Url.Action("Letovi", "Airline", new { id = Model.Id })'>Letovi</a>
         </li>
 
         <li class="nav-item">
-            <a class="nav-link" href='@Url.Action("DodatneUsluge","Airline",new { id=Model.Id})'>Dodatne Usluge</a>
+            <a class="nav-link" href='@Url.Action("DodatneUsluge", "Airline", new { id = Model.Id })'>Dodatne Usluge</a>
         </li>
         @if (Context.Session.GetString("Admin") != null)
         {
@@ -25,9 +25,7 @@
                 <a class="nav-link" href='@Url.Action("Destinacije", "Airline", new { id = Model.Id })'>Destinacije</a>
             </li>
 
-            <li class="nav-item">
-                <a class="nav-link" href='@Url.Action("Letovi", "Airline", new { id = Model.Id })'>Avion</a>
-            </li>
+
 
         }
 
@@ -35,41 +33,159 @@
     </ul>
 </div>
 <BR><BR><BR>
-<form action="https://localhost:44300/Home/Flights">
-    <div class="form-row">
-        <div class="form-group col-md-2">
-            <label for="let-start">Polazak</label>
-            <input name="DepartureTime" class="span2 form-control" size="16" type="date" value="" id="let-start" data-date="">
+        <div>
+
+            @if (Context.Session.GetString("Admin") == null)
+            {
+                <h2>Pretraga leta</h2>
+                <form action="https://localhost:44300/Home/Flights">
+                    <div class="form-row">
+                        <div class="form-group col-md-2">
+                            <label for="let-start">Polazak</label>
+                            <input name="DepartureTime" class="span2 form-control" size="16" type="date" value="" id="let-start" data-date="">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="let-end">Dolazak</label>
+                            <input name="LandingTime" class="span3 form-control" size="16" type="date" value="" id="let-end" data-date="">
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label for="let-od">Od</label>
+                            <input type="text" style="text-transform:capitalize" class="form-control" name="From" placeholder="From">
+                        </div>
+
+                        <div class="form-group col-md-3">
+                            <label for="let-do">Do</label>
+                            <input type="text" style="text-transform:capitalize" class="form-control" name="To" placeholder="To">
+                        </div>
+
+                        <div class="form-group col-md-2">
+                            <label for="br-putnika">Vrsta puta</label>
+                            <select name="Type" id="br-putnika" class="form-control">
+                                <option selected>Round Trup</option>
+                                <option>One Wey</option>
+                                <option>Multi City</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <button type="submit" value="Flight" class="btn btn-primary">Pretraži</button>
+                </form>
+            }
         </div>
-        <div class="form-group col-md-2">
-            <label for="let-end">Dolazak</label>
-            <input name="LandingTime" class="span3 form-control" size="16" type="date" value="" id="let-end" data-date="">
-        </div>
+        <div>
 
-        <div class="form-group col-md-3">
-            <label for="let-od">Od</label>
-            <input type="text" style="text-transform:capitalize" class="form-control" name="From" placeholder="From">
-        </div>
+            @if (Context.Session.GetString("Admin") != null)
+            {
+                <h2>Dodaj novi let u ponudu Aviokompanije</h2>
+                <form method="post">
+                    <div class="form-row">
+                        <div class="form-group col-md-2">
+                            <label for="let-start">Polazak</label>
+                            <input name="DepartureTime" class="span2 form-control" size="16" type="date" value="" id="let-start" data-date="">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="let-end">Dolazak</label>
+                            <input name="LandingTime" class="span3 form-control" size="16" type="date" value="" id="let-end" data-date="">
+                        </div>
 
-        <div class="form-group col-md-3">
-            <label for="let-do">Do</label>
-            <input type="text" style="text-transform:capitalize" class="form-control" name="To" placeholder="To">
-        </div>
+                        <div class="form-group col-md-2">
+                            <label for="let-od">Od</label>
+                            <input type="text" style="text-transform:capitalize" class="form-control" name="From" placeholder="From">
+                        </div>
 
-        <div class="form-group col-md-2">
-            <label for="br-putnika">Vrsta puta</label>
-            <select name="Type" id="br-putnika" class="form-control">
-                <option selected>Round Trup</option>
-                <option>One Wey</option>
-                <option>Multi City</option>
-            </select>
-        </div>
+                        <div class="form-group col-md-2">
+                            <label for="let-do">Do</label>
+                            <input type="text" style="text-transform:capitalize" class="form-control" name="To" placeholder="To">
+                        </div>
 
-    </div>
-    <button type="submit" value="Flight" class="btn btn-primary">Pretraži</button>
-</form>
+                        <div class="form-group col-md-2">
+                            <label for="br-putnika">Vrsta puta</label>
+                            <select name="Type" id="br-putnika" class="form-control">
+                                <option selected>Round Trup</option>
+                                <option>One Wey</option>
+                                <option>Multi City</option>
+                            </select>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="br-putnika">Vrsta aviona</label>
+                            <select name="Airplain" id="br-putnika" class="form-control">
+                                <option selected>boeing 777-200</option>
+                                <option>Boeing 777</option>
+                                <option>Boing 747</option>
+                            </select>
+                        </div>
 
+                    </div>
+                    <div class="form-row">
 
+                        <div class="form-group col-md-2">
+                            <label for="let-od">Cena</label>
+                            <input type="text" style="text-transform:capitalize" class="form-control" name="Price" placeholder="Cena">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="let-od">Distanca</label>
+                            <input type="text" style="text-transform:capitalize" class="form-control" name="Distance" placeholder="Distanca">
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="let-od">Vreme trajanja leta</label>
+                            <input type="time" style="text-transform:capitalize" class="form-control" name="Time" placeholder="Vreme trajanja leta">
+                        </div>
+                    </div>
+                    @if (ViewBag.Message != null)
+                    {
+                        <script type="text/javascript">
+                    window.onload = function () {
+                        /**/
+                        alert("@ViewBag.Message");
+                    /**/
+                };
+                        </script>
+                    }
+                    <button type="submit" value="Flight" class="btn btn-primary">Dodaj Let</button>
+
+                </form>
+
+            }
+                <div>
+                    <BR><BR>
+                    @if (Context.Session.GetString("Admin") != null)
+                    {
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Name)
+                                    </th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model.flight)
+                                {
+                                    <tr>
+
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.Price)
+                                        </td>
+                                        <td>
+                                            @Html.DisplayFor(modelItem => item.TimeOfTrevel)
+                                        </td>
+                                        <td>
+                                            <input type="hidden" name="Id" value=@Html.DisplayFor(modelItem => item.Id)>
+                                        </td>
+
+                                        <td>
+                                            @Html.ActionLink("Uredi let", "UrediLet", "Admin", new { id = item.Id })
+                                        </td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+
+                    }
+                </div>
 
 
 

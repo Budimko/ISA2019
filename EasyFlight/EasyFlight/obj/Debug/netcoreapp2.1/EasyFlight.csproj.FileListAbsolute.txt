@@ -38,6 +38,14 @@ C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Debug\netcoreapp2.1\Razor\
 C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Debug\netcoreapp2.1\Razor\Views\User\DodajPrijatelja.g.cshtml.cs
 C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Debug\netcoreapp2.1\Razor\Views\Airline\Destinacije.g.cshtml.cs
 C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Debug\netcoreapp2.1\Razor\Views\Airline\Letovi.g.cshtml.cs
-C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Debug\netcoreapp2.1\Razor\Views\Airline\Avion.g.cshtml.cs
 C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Debug\netcoreapp2.1\Razor\Views\Airline\DodatneUsluge.g.cshtml.cs
 C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Debug\netcoreapp2.1\Razor\Views\Airplane\Index.g.cshtml.cs
+C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Debug\netcoreapp2.1\Razor\Views\Airline\ProfilEdit.g.cshtml.cs
+C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Debug\netcoreapp2.1\Razor\Views\Airline\DodatneUslugeEdit.g.cshtml.cs
+C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Debug\netcoreapp2.1\Razor\Views\Reservation\Reservation.g.cshtml.cs
+C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Debug\netcoreapp2.1\Razor\Views\Test\Index.g.cshtml.cs
+C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Debug\netcoreapp2.1\Razor\Views\Reservation\BrzaRezervacija.g.cshtml.cs
+C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Debug\netcoreapp2.1\Razor\Views\Reservation\Hotel.g.cshtml.cs
+C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Debug\netcoreapp2.1\Razor\Views\Reservation\Auto.g.cshtml.cs
+C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Debug\netcoreapp2.1\Razor\Views\Admin\UrediLet.g.cshtml.cs
+C:\Users\MB\Desktop\ISA2019\EasyFlight\EasyFlight\obj\Debug\netcoreapp2.1\Razor\Views\Admin\Popust.g.cshtml.cs

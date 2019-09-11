@@ -1,7 +1,25 @@
-﻿
+﻿@model EasyFlight.ViewModel.FriendViewModel
 @{
     ViewData["Title"] = "DodajPrijatelja";
 }
 
 <h2>DodajPrijatelja</h2>
+<div>
+<form method="post">
+    <div class="form-group">
+        <div>
+            <label for="Name">Unesite ime prijatelja koga zelite dodati</label>
+            <input type="text" class="form-control" name="FIrstName">
+        </div>
+        <BR>
+        <div>
+            <label for="Name">Unesite prezime prijatelja koga zelite dodati</label>
+            <input type="text" class="form-control" name="LastName">
+        </div>
+        <BR>
+        <button type="submit" value="DodajPrijatelja" class="btn btn-primary">Dodaj Prijatelja</button>
 
+    </div>
+</form>
+
+</div>

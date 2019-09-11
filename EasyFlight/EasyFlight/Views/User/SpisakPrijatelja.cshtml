@@ -13,7 +13,7 @@
         @if (Model.Count() == 0)
         {
             <BR><BR><BR>
-            <a>Trenutno Nemate ni jednog prijatelja!!!!</a>
+            <a>Trenutno nemate ni jednog prijatelja. Mozete na linku ispod dodati prijatelje u listu</a>
         }
         else
         {
@@ -44,19 +44,11 @@
                 </tbody>
             </table>
             <BR><BR><BR>
-            <form method="get" action="https://localhost:44300/User/DodajPrijatelja">
-                <div class="form-group">
-                    <label for="login-password">Unesite ime ili prezime prijatelja koga zelite dodati</label>
-                    <input type="text" class="form-control" name="NameOrSurname">
-                    <BR>
-                    <button type="submit" value="DodajPrijatelja" class="btn btn-primary">DodajPrijatelja</button>
-
-                </div>
-            </form>
+                    <div>
+                        @Html.ActionLink("Dodaj prijatelja", "DodajPrijatelja", "User")
+                    </div>
         }
     </li>
-    <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-    </li>
+    
 
 </ul>

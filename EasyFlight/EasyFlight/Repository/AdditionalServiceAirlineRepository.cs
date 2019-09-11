@@ -15,7 +15,13 @@ namespace EasyFlight.Repository
             db = _db;
         }
         public IEnumerable<AdditionalServiceAirline> getAdditionalServiceAirline => db.AdditionalServiceAirline;
-        
+
+        public void Edit(AdditionalServiceAirline _AdditionalServiceAirline)
+        {
+            db.AdditionalServiceAirline.Update(_AdditionalServiceAirline);
+            db.SaveChanges();
+        }
+
         public AdditionalServiceAirline GetAdditionalServiceAirline(Guid Id)
         {
             AdditionalServiceAirline dbAdditionalServiceAirline = db.AdditionalServiceAirline.Find(Id);
